@@ -43,11 +43,11 @@ namespace UniT.FbInstant
                 Tcs[message.CallbackId].TrySetResult(message);
             }
 
+            [Preserve]
             private sealed class Message : Result<string>
             {
                 public string CallbackId { get; }
 
-                [Preserve]
                 [JsonConstructor]
                 public Message(string data, string error, string callbackId) : base(data, error)
                 {

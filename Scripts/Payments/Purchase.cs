@@ -3,6 +3,7 @@ namespace UniT.FbInstant
     using Newtonsoft.Json;
     using UnityEngine.Scripting;
 
+    [Preserve]
     public sealed class Purchase
     {
         public string PaymentId        { get; }
@@ -11,7 +12,6 @@ namespace UniT.FbInstant
         public bool?  IsConsumed       { get; internal set; }
         public string DeveloperPayload { get; }
 
-        [Preserve]
         [JsonConstructor]
         internal Purchase(string paymentId, string productId, string purchaseToken, bool? isConsumed, string developerPayload)
         {

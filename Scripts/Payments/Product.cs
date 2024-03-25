@@ -3,6 +3,7 @@ namespace UniT.FbInstant
     using Newtonsoft.Json;
     using UnityEngine.Scripting;
 
+    [Preserve]
     public sealed class Product
     {
         public string ProductId         { get; }
@@ -13,7 +14,6 @@ namespace UniT.FbInstant
         public float  PriceAmount       { get; }
         public string PriceCurrencyCode { get; }
 
-        [Preserve]
         [JsonConstructor]
         internal Product(string productId, string title, string description, string imageUri, string price, float priceAmount, string priceCurrencyCode)
         {
